@@ -31,4 +31,16 @@ public class DataUtilityTest extends FoodDeliveryApplicationTests {
 		assertEquals(1L, DataUtility.getLong("1"));
 	}
 
+	@Test
+public void generatePassword() {
+ 
+    String regex = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%=:\\?]).{8,12})";
+
+    String thePassword = DataUtility.generatePassword();
+ 
+    assertNotNull(thePassword);
+    assertTrue(thePassword.matches(regex));
+}
+
+
 }
